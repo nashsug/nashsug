@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Leveraging Ruby: An Interactive Example</title>
+
+		<meta name="description" content="Leveraging Ruby: An Interactive Example">
+		<meta name="author" content="David Hale">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Leveraging Ruby</h1>
+					<h3>An Interactive Example</h3>
+					<p><a href="https://twitter.com/dmhalejr" target="_blank">@dmhalejr</a></p>
+				</section>
+
+				<section>
+					<h2>A Bit About Me...</h2>
+                    <h4 style="text-decoration: underline">Current Gig</h4>
+					<p>QA Engineer at LifeWay</p>
+                    <h4 style="text-decoration: underline">Languages (so far)</h4>
+                    <p>JS, Python, Ruby, Java</p>
+                    <h4 style="text-decoration: underline">Current Obsession</h4>
+                    <p>My Twins</p>
+				</section>
+                <section>
+                    <h2>Why This Talk?</h2>
+                </section>
+                <section>
+                    <ul>
+                        <li>Language Agnostic</li>
+                        <li>Framework Agnostic</li>
+                        <li>Assist Community</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>CASE STUDY</h2>
+                </section>
+                <section>
+                    <section>
+                        <h2>
+                            Why Ruby?
+                        </h2>
+                    </section>
+                    <section>
+                        <p>
+                            <q cite="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/2773">
+                            &ldquo;Ruby is simple in appearance, but is very complex inside, just like our human body&rdquo;
+                            </q>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>IRB</h2>
+                        <p>Interactive Ruby Shell</p>
+                    </section>
+                    <section>
+                        <h2>Watir WebDriver</h2>
+                        <p>High-Level API Wrapper for Selenium-WebDriver</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>CLASS PARTICIPATION</h2>
+                        <small style="color: #aa2233;">EVERYONE GOT RUBY? LAST CHANCE!</small>
+                    </section>
+                    <section>
+                        <pre><code class="ruby">
+irb
+irb(main):001:0> require 'watir-webdriver'
+irb(main):002:0> b = Watir::Browser.new :firefox
+irb(main):003:0> b.window.maximize
+irb(main):004:0> b.goto 'http://the-internet.herokuapp.com/login'
+                            </code></pre>
+                    </section>
+                    <section>
+                        <h2>LOCATORS</h2>
+                        <pre><code class="ruby">
+b.element(css: 'input#username')
+b.element(css: 'input#password')
+b.element(css: 'button.radius')
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>FLASH</h2>
+                        <pre><code class="ruby">
+b.element(css: 'input#username').flash
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>SEND KEYS</h2>
+                        <pre><code class="ruby">
+b.element(css: 'input#username').send_keys "string"
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>PRESENT/DISPLAY/EXISTS</h2>
+                        <pre><code class="ruby">
+b.element(css: 'input#username').present?
+b.element(css: 'input#username').display?
+b.element(css: 'input#username').exists?
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>DOCS</h2>
+                        <a href="http://www.rubydoc.info/gems/watir-webdriver/frames" target="_blank">LINK!</a>
+                    </section>
+                </section>
+                <section>
+                    <h2>EXIT</h2>
+<pre><code class="ruby">
+b.close
+exit
+                        </code></pre>
+                </section>
+                <section>
+                    <h2>Thanks!</h2>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

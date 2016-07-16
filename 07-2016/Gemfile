@@ -1,0 +1,5 @@
+source "https://rubygems.org"
+
+gem 'watir-webdriver', '~> 0.9.1'
+gem 'selenium-webdriver', '~> 2.53', '>= 2.53.4'
+gem 'irb-history', '~> 1.0'
