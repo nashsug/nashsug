@@ -1,0 +1,20 @@
+{
+  "name": "auto_accessibility",
+  "version": "1.0.0",
+  "description": "Auto Accessibility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "automation",
+    "testing",
+    "accessibility"
+  ],
+  "author": "David Hale",
+  "license": "ISC",
+  "dependencies": {
+    "a11y": "^0.4.1",
+    "chai": "^3.5.0"
+  }
+}
