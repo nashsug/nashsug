@@ -1,0 +1,30 @@
+
+#htmlAudioNotifierPanel {
+  float: right;
+  margin: 5px;
+  margin-right: 10px;
+}
+
+#htmlAudioNotifierPanel[class*="isDisabled"] a.disableControl {
+  display: none;
+}
+
+#htmlAudioNotifierPanel[class*="isEnabled"] a.enableControl {
+  display: none;
+}
+
+#htmlAudioNotifierPanel div {
+  line-height: 25px;
+  padding-left: 25px;
+  background-position: left center;
+  background-repeat:no-repeat;
+}
+
+div.htmlAudioEnabled {
+  background-image: url('../images/audio-volume-high.png');
+}
+
+div.htmlAudioDisabled {
+  background-image: url('../images/audio-volume-muted.png');
+  opacity: 0.5;
+}
